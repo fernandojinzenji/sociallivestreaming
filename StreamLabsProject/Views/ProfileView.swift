@@ -135,6 +135,53 @@ class ProfileView: UIView {
         self.addSubview(bioLabel)
         bioLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         bioLabel.topAnchor.constraint(equalTo: editButton.bottomAnchor, constant: 16.0).isActive = true
+        
+        // grid video list, liked videos
+        let topHorizontalLine = UIView()
+        topHorizontalLine.translatesAutoresizingMaskIntoConstraints = false
+        topHorizontalLine.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        self.addSubview(topHorizontalLine)
+        topHorizontalLine.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        topHorizontalLine.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        topHorizontalLine.topAnchor.constraint(equalTo: bioLabel.bottomAnchor, constant: 16.0).isActive = true
+        topHorizontalLine.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
+        
+        let contentStackView = UIStackView()
+        contentStackView.distribution = .fillEqually
+        contentStackView.axis = .horizontal
+        contentStackView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(contentStackView)
+        contentStackView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        contentStackView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        contentStackView.topAnchor.constraint(equalTo: topHorizontalLine.bottomAnchor, constant: 4.0).isActive = true
+        contentStackView.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
+        
+        let bottomHorizontalLine = UIView()
+        bottomHorizontalLine.translatesAutoresizingMaskIntoConstraints = false
+        bottomHorizontalLine.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        self.addSubview(bottomHorizontalLine)
+        bottomHorizontalLine.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        bottomHorizontalLine.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        bottomHorizontalLine.topAnchor.constraint(equalTo: contentStackView.bottomAnchor, constant: 4.0).isActive = true
+        bottomHorizontalLine.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
+        
+        let gridListButton = UIButton()
+        gridListButton.setImage(#imageLiteral(resourceName: "keypad"), for: .normal)
+        contentStackView.addArrangedSubview(gridListButton)
+        
+        let likedListButton = UIButton()
+        likedListButton.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
+        contentStackView.addArrangedSubview(likedListButton)
+        
+        let videoList = UILabel()
+        videoList.translatesAutoresizingMaskIntoConstraints = false
+        videoList.numberOfLines = 0
+        videoList.text = "No content"
+        videoList.font = UIFont.systemFont(ofSize: 13.0)
+        videoList.textColor = UIColor.gray
+        self.addSubview(videoList)
+        videoList.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        videoList.topAnchor.constraint(equalTo: bottomHorizontalLine.bottomAnchor, constant: 16.0).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
