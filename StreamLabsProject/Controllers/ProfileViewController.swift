@@ -18,10 +18,23 @@ class ProfileViewController: UIViewController {
         // Set UI
         self.view = contentView
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "...", style: .plain, target: self, action: #selector(goToSettings))
+        // Load user profile
+        self.loadProfileData()
     }
     
     @objc func goToSettings() {
         // TBD
+    }
+    
+    func loadProfileData() {
+        
+        // In a real project, this information should be grabbed from an API...
+        let profile = ProfileService.returnFakeProfile()
+        
+        // Update UI
+        self.contentView.setProfileData(profile: profile)
+        
+        self.navigationItem.title = profile.fullname
+        
     }
 }

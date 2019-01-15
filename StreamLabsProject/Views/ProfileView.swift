@@ -11,21 +11,20 @@ import UIKit
 class ProfileView: UIView {
 
     // UI elements
-    var profileImageView = UIImageView()
-    var usernameLabel = UILabel()
-    var videoCounterLabel = UILabel()
-    var followingCounterLabel = UILabel()
-    var fansCounterLabel = UILabel()
-    var heartsCounterLabel = UILabel()
-    var editButton = UIButton()
-    var bioLabel = UILabel()
+    private var profileImageView = UIImageView()
+    private var usernameLabel = UILabel()
+    private var videoCounterLabel = UILabel()
+    private var followingCounterLabel = UILabel()
+    private var fansCounterLabel = UILabel()
+    private var heartsCounterLabel = UILabel()
+    private var editButton = UIButton()
+    private var bioLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
         
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
-        profileImageView.image = #imageLiteral(resourceName: "me")
         self.addSubview(profileImageView)
         profileImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         profileImageView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor, constant: 24.0).isActive = true
@@ -33,13 +32,11 @@ class ProfileView: UIView {
         profileImageView.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
         
         usernameLabel.translatesAutoresizingMaskIntoConstraints = false
-        usernameLabel.text = "@fernandojinzenji"
         self.addSubview(usernameLabel)
         usernameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         usernameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 8.0).isActive = true
         
         videoCounterLabel.translatesAutoresizingMaskIntoConstraints = false
-        videoCounterLabel.text = "0 videos"
         videoCounterLabel.textColor = .white
         videoCounterLabel.textAlignment = .center
         videoCounterLabel.font = UIFont.systemFont(ofSize: 14.0)
@@ -68,7 +65,6 @@ class ProfileView: UIView {
         followingStackView.translatesAutoresizingMaskIntoConstraints = false
         socialStackView.addArrangedSubview(followingStackView)
         
-        followingCounterLabel.text = "0"
         followingCounterLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
         followingCounterLabel.textAlignment = .center
         followingStackView.addArrangedSubview(followingCounterLabel)
@@ -86,7 +82,6 @@ class ProfileView: UIView {
         fansStackView.translatesAutoresizingMaskIntoConstraints = false
         socialStackView.addArrangedSubview(fansStackView)
         
-        fansCounterLabel.text = "0"
         fansCounterLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
         fansCounterLabel.textAlignment = .center
         fansStackView.addArrangedSubview(fansCounterLabel)
@@ -104,7 +99,6 @@ class ProfileView: UIView {
         heartsStackView.translatesAutoresizingMaskIntoConstraints = false
         socialStackView.addArrangedSubview(heartsStackView)
         
-        heartsCounterLabel.text = "0"
         heartsCounterLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
         heartsCounterLabel.textAlignment = .center
         heartsStackView.addArrangedSubview(heartsCounterLabel)
@@ -129,7 +123,6 @@ class ProfileView: UIView {
         
         bioLabel.translatesAutoresizingMaskIntoConstraints = false
         bioLabel.numberOfLines = 0
-        bioLabel.text = "No bio yet"
         bioLabel.font = UIFont.systemFont(ofSize: 13.0)
         bioLabel.textColor = UIColor.gray
         self.addSubview(bioLabel)
@@ -188,4 +181,20 @@ class ProfileView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+}
+
+// Public methods available to controller
+extension ProfileView {
+    
+    public func setProfileData(profile: Profile) {
+        
+        profileImageView.image = profile.image
+        usernameLabel.text = profile.username
+        videoCounterLabel.text = String(profile.videoCounter)
+        followingCounterLabel.text = String(profile.following)
+        fansCounterLabel.text = String(profile.fans)
+        heartsCounterLabel.text = String(profile.hearts)
+        bioLabel.text = profile.bio
+    }
+    
 }

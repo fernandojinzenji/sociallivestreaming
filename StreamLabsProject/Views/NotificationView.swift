@@ -92,9 +92,9 @@ extension NotificationView: UITableViewDelegate, UITableViewDataSource {
 class NotificationCell: UITableViewCell {
 
     // UI elements
-    var avatarImageView = UIImageView()
-    var descriptionLabel = UILabel()
-    var watchButton = UIButton()
+    private var avatarImageView = UIImageView()
+    private var descriptionLabel = UILabel()
+    private var watchButton = UIButton()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

@@ -23,6 +23,8 @@
 		9C87E00C21EE76FA0022D6A4 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E00B21EE76FA0022D6A4 /* UploadView.swift */; };
 		9C87E00E21EE77B70022D6A4 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E00D21EE77B70022D6A4 /* Notification.swift */; };
 		9C87E01021EE7AF40022D6A4 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E00F21EE7AF40022D6A4 /* NotificationService.swift */; };
+		9C87E01221EE93CC0022D6A4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E01121EE93CC0022D6A4 /* Profile.swift */; };
+		9C87E01421EE94310022D6A4 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E01321EE94310022D6A4 /* ProfileService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		9C87E00B21EE76FA0022D6A4 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		9C87E00D21EE77B70022D6A4 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		9C87E00F21EE7AF40022D6A4 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		9C87E01121EE93CC0022D6A4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		9C87E01321EE94310022D6A4 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 		9C87DFF521EE6D940022D6A4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9C87E01121EE93CC0022D6A4 /* Profile.swift */,
 				9C87E00D21EE77B70022D6A4 /* Notification.swift */,
 			);
 			path = Models;
@@ -125,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				9C87E00F21EE7AF40022D6A4 /* NotificationService.swift */,
+				9C87E01321EE94310022D6A4 /* ProfileService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -200,6 +206,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C87E00421EE722D0022D6A4 /* ProfileView.swift in Sources */,
+				9C87E01421EE94310022D6A4 /* ProfileService.swift in Sources */,
+				9C87E01221EE93CC0022D6A4 /* Profile.swift in Sources */,
 				9C87E00021EE70290022D6A4 /* ProfileViewController.swift in Sources */,
 				9C87E01021EE7AF40022D6A4 /* NotificationService.swift in Sources */,
 				9C87E00221EE70EA0022D6A4 /* UploadViewController.swift in Sources */,

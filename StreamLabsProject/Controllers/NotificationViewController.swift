@@ -18,7 +18,7 @@ class NotificationViewController: UIViewController {
         // Set UI
         self.view = contentView
         
-        // Update notifications
+        // Load notifications
         self.loadNotifications()
     }
     
