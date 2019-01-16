@@ -21,4 +21,5 @@ class StreamViewController: UIViewController {
         // Load videos
         contentView.loadStream(videos: VideoService.returnHardcodedVideoList())
     }
+    
 }
