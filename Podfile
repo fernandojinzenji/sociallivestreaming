@@ -6,6 +6,5 @@ target 'StreamLabsProject' do
   use_frameworks!
 
   # Pods for StreamLabsProject
-  pod 'MMPlayerView'
 
 end
