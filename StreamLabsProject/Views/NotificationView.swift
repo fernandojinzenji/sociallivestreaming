@@ -15,7 +15,7 @@ class NotificationView: UIView {
     var refreshControl = UIRefreshControl()
     
     // Data
-    var notificationList = [Notification]()
+    var notificationList = [NotificationApp]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,7 +49,7 @@ class NotificationView: UIView {
 // Public methods available to controller
 extension NotificationView {
     
-    public func updateTableView(list: [Notification]) {
+    public func updateTableView(list: [NotificationApp]) {
         
         self.notificationList = list
         
@@ -132,7 +132,7 @@ class NotificationCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setData(notification: Notification) {
+    public func setData(notification: NotificationApp) {
     
         avatarImageView.image = notification.avatar
         descriptionLabel.text = "\(notification.username) is LIVE\n\(notification.description)"

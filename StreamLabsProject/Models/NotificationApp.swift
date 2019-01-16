@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public struct Notification {
+public struct NotificationApp {
     
     let avatar: UIImage
     let username: String

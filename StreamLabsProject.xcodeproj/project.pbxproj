@@ -21,10 +21,11 @@
 		9C87E00821EE76E50022D6A4 /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E00721EE76E50022D6A4 /* StreamView.swift */; };
 		9C87E00A21EE76EF0022D6A4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E00921EE76EF0022D6A4 /* SearchView.swift */; };
 		9C87E00C21EE76FA0022D6A4 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E00B21EE76FA0022D6A4 /* UploadView.swift */; };
-		9C87E00E21EE77B70022D6A4 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E00D21EE77B70022D6A4 /* Notification.swift */; };
+		9C87E00E21EE77B70022D6A4 /* NotificationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E00D21EE77B70022D6A4 /* NotificationApp.swift */; };
 		9C87E01021EE7AF40022D6A4 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E00F21EE7AF40022D6A4 /* NotificationService.swift */; };
 		9C87E01221EE93CC0022D6A4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E01121EE93CC0022D6A4 /* Profile.swift */; };
 		9C87E01421EE94310022D6A4 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E01321EE94310022D6A4 /* ProfileService.swift */; };
+		9C87E01621EEB3010022D6A4 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E01521EEB3010022D6A4 /* UIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,10 +45,11 @@
 		9C87E00721EE76E50022D6A4 /* StreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamView.swift; sourceTree = "<group>"; };
 		9C87E00921EE76EF0022D6A4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		9C87E00B21EE76FA0022D6A4 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
-		9C87E00D21EE77B70022D6A4 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		9C87E00D21EE77B70022D6A4 /* NotificationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationApp.swift; sourceTree = "<group>"; };
 		9C87E00F21EE7AF40022D6A4 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		9C87E01121EE93CC0022D6A4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		9C87E01321EE94310022D6A4 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		9C87E01521EEB3010022D6A4 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				9C87E01121EE93CC0022D6A4 /* Profile.swift */,
-				9C87E00D21EE77B70022D6A4 /* Notification.swift */,
+				9C87E00D21EE77B70022D6A4 /* NotificationApp.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +133,7 @@
 			children = (
 				9C87E00F21EE7AF40022D6A4 /* NotificationService.swift */,
 				9C87E01321EE94310022D6A4 /* ProfileService.swift */,
+				9C87E01521EEB3010022D6A4 /* UIHelper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -215,8 +218,9 @@
 				9C87DFFE21EE701F0022D6A4 /* NotificationViewController.swift in Sources */,
 				9C87DFE221EE6BF00022D6A4 /* AppDelegate.swift in Sources */,
 				9C87DFF821EE6ED10022D6A4 /* MainViewController.swift in Sources */,
-				9C87E00E21EE77B70022D6A4 /* Notification.swift in Sources */,
+				9C87E00E21EE77B70022D6A4 /* NotificationApp.swift in Sources */,
 				9C87DFFC21EE70110022D6A4 /* SearchViewController.swift in Sources */,
+				9C87E01621EEB3010022D6A4 /* UIHelper.swift in Sources */,
 				9C87DFFA21EE70040022D6A4 /* StreamViewController.swift in Sources */,
 				9C87E00821EE76E50022D6A4 /* StreamView.swift in Sources */,
 				9C87E00621EE76B90022D6A4 /* NotificationView.swift in Sources */,

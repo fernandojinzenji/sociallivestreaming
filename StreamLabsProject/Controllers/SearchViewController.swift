@@ -7,24 +7,25 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class SearchViewController: UIViewController {
 
+    var contentView = SearchView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Setup UI
+        self.view = contentView
+        
+        let player = AVPlayer(url: URL(string: "https://stream.livestreamfails.com/video/5c103d427afc4.mp4")!)
+        let vc = AVPlayerViewController()
+        vc.player = player
+        
+        present(vc, animated: true) {
+            vc.player?.play()
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

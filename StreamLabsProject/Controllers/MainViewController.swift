@@ -14,12 +14,14 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
 
         let streamViewController = generateNewViewController(controller: StreamViewController(), title: "", image: #imageLiteral(resourceName: "home"), tag: 0, embedNavigationController: false)
-        let searchViewController = generateNewViewController(controller: SearchViewController(), title: "Search", image: #imageLiteral(resourceName: "search"), tag: 1, embedNavigationController: true)
+        let searchViewController = generateNewViewController(controller: SearchViewController(), title: "Search", image: #imageLiteral(resourceName: "search"), tag: 1, embedNavigationController: false)
         let uploadViewController = generateNewViewController(controller: UploadViewController(), title: "", image: #imageLiteral(resourceName: "plus"), tag: 2, embedNavigationController: false)
         let notificationViewController = generateNewViewController(controller: NotificationViewController(), title: "Notifications", image: #imageLiteral(resourceName: "list"), tag: 3, embedNavigationController: true)
         let profileViewController = generateNewViewController(controller: ProfileViewController(), title: "Profile", image: #imageLiteral(resourceName: "user_male"), tag: 4, embedNavigationController: true)
         
         self.viewControllers = [streamViewController, searchViewController, uploadViewController, notificationViewController, profileViewController]
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(backToMain), name: Notification.Name(rawValue: "BackToMain"), object: nil)
         
     }
     
@@ -42,4 +44,7 @@ class MainViewController: UITabBarController {
         }
     }
 
+    @objc private func backToMain() {
+        self.selectedIndex = 0
+    }
 }

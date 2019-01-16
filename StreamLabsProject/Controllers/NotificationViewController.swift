@@ -15,7 +15,7 @@ class NotificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Set UI
+        // Setup UI
         self.view = contentView
         
         // Load notifications
