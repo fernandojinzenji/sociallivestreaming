@@ -22,7 +22,7 @@ class ProfileView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.backgroundColor = UIHelper.getStreamLabsGreenColor()
         
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(profileImageView)
@@ -190,7 +190,7 @@ extension ProfileView {
         
         profileImageView.image = profile.image
         usernameLabel.text = profile.username
-        videoCounterLabel.text = String(profile.videoCounter)
+        videoCounterLabel.text = "\(profile.videoCounter) videos"
         followingCounterLabel.text = String(profile.following)
         fansCounterLabel.text = String(profile.fans)
         heartsCounterLabel.text = String(profile.hearts)

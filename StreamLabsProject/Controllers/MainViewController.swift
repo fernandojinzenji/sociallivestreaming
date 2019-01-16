@@ -12,6 +12,9 @@ class MainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBar.barTintColor = .black
+        self.tabBar.isTranslucent = false
 
         let streamViewController = generateNewViewController(controller: StreamViewController(), title: "", image: #imageLiteral(resourceName: "home"), tag: 0, embedNavigationController: false)
         let searchViewController = generateNewViewController(controller: SearchViewController(), title: "Search", image: #imageLiteral(resourceName: "search"), tag: 1, embedNavigationController: false)
@@ -24,7 +27,6 @@ class MainViewController: UITabBarController {
         NotificationCenter.default.addObserver(self, selector: #selector(backToMain), name: Notification.Name(rawValue: "BackToMain"), object: nil)
         
     }
-    
 
     private func generateNewViewController(controller: UIViewController, title: String, image: UIImage, tag: Int, embedNavigationController: Bool) -> UIViewController {
         
@@ -35,6 +37,8 @@ class MainViewController: UITabBarController {
         // Embed navigation controller, if necessary
         if embedNavigationController {
             let navigationController = UINavigationController()
+            navigationController.navigationBar.barTintColor = .black
+            navigationController.navigationBar.barStyle = .black
             navigationController.viewControllers.append(controller)
             controller.navigationItem.title = title
             return navigationController

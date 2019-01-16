@@ -19,7 +19,7 @@ class NotificationView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.backgroundColor = UIHelper.getStreamLabsGreenColor()
         
         refreshControl.addTarget(self, action: #selector(endRefreshControl), for: .valueChanged)
         
@@ -29,6 +29,7 @@ class NotificationView: UIView {
         tableView.dataSource = self
         tableView.refreshControl = refreshControl
         tableView.allowsSelection = false
+        tableView.backgroundColor = UIHelper.getStreamLabsGreenColor()
         self.addSubview(tableView)
         tableView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor).isActive = true
@@ -98,6 +99,7 @@ class NotificationCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.backgroundColor = UIHelper.getStreamLabsGreenColor()
         
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(avatarImageView)
