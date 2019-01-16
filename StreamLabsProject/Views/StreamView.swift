@@ -17,6 +17,8 @@ class StreamView: UIView {
     // Data
     private var cellHeight = 0
     private var videos = [Video]()
+    private var currentCell: StreamCell?
+    private var initialLoad = true
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,6 +56,7 @@ extension StreamView: UITableViewDelegate, UITableViewDataSource {
         
         let video = videos[indexPath.row]
         cell.setVideo(video: video)
+        
         return cell
     }
     
@@ -63,10 +66,22 @@ extension StreamView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
+
         let cell = cell as! StreamCell
-        cell.loadVideo()
         
+        if initialLoad { // first loop on the tableview
+            if indexPath.row == 0 {
+                cell.loadVideo()
+                currentCell = cell
+            }
+            else if indexPath.row == videos.count - 1 {
+                initialLoad = false
+            }
+        }
+        else {
+            currentCell = cell
+            currentCell?.loadVideo()
+        }
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -75,7 +90,6 @@ extension StreamView: UITableViewDelegate, UITableViewDataSource {
         cell.stopVideo()
         
     }
-    
 }
 
 // Public methods available to controller
@@ -87,6 +101,12 @@ extension StreamView {
         tableView.reloadData()
     }
     
+    public func stopCurrentVideo() {
+        
+        if let currentCell = currentCell {
+            currentCell.stopVideo()
+        }
+    }
 }
 
 
@@ -136,7 +156,7 @@ class StreamCell: UITableViewCell {
     }
     
     func stopVideo() {
-        
+
         self.player = nil
     }
     

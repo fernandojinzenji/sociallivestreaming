@@ -22,4 +22,7 @@ class StreamViewController: UIViewController {
         contentView.loadStream(videos: VideoService.returnHardcodedVideoList())
     }
     
+//    override func viewWillDisappear(_ animated: Bool) {
+//        contentView.stopCurrentVideo()
+//    }
 }
