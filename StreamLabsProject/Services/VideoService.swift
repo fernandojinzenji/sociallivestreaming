@@ -32,7 +32,7 @@ public class VideoService {
                        hashtag: "#fortnite",
                        streamURL: "https://stream.livestreamfails.com/video/5b8d93f2584d5.mp4")
         
-        let v6 = Video(coverImage: "https://cdn.livestreamfails.com/thumbnail/5b205bf57f6ee.jpgg",
+        let v6 = Video(coverImage: "https://cdn.livestreamfails.com/thumbnail/5b205bf57f6ee.jpg",
                        hashtag: "#fortnite",
                        streamURL: "https://stream.livestreamfails.com/video/5b205bf5a4113.mp4")
         

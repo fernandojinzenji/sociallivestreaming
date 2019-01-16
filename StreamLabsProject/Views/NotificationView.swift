@@ -15,7 +15,7 @@ class NotificationView: UIView {
     var refreshControl = UIRefreshControl()
     
     // Data
-    var notificationList = [NotificationApp]()
+    var notifications = [NotificationApp]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,7 +51,7 @@ extension NotificationView {
     
     public func updateTableView(list: [NotificationApp]) {
         
-        self.notificationList = list
+        self.notifications = list
         
         tableView.reloadData()
     }
@@ -61,13 +61,13 @@ extension NotificationView {
 extension NotificationView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notificationList.count
+        return notifications.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NotificationCell
         
-        cell.setData(notification: notificationList[indexPath.row])
+        cell.setData(notification: notifications[indexPath.row])
         
         return cell
     }

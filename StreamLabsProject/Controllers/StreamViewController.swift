@@ -17,5 +17,8 @@ class StreamViewController: UIViewController {
 
         // Setup UI
         self.view = contentView
+        
+        // Load videos
+        contentView.loadStream(videos: VideoService.returnHardcodedVideoList())
     }
 }
