@@ -26,9 +26,14 @@
 		9C87E01221EE93CC0022D6A4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E01121EE93CC0022D6A4 /* Profile.swift */; };
 		9C87E01421EE94310022D6A4 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E01321EE94310022D6A4 /* ProfileService.swift */; };
 		9C87E01621EEB3010022D6A4 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E01521EEB3010022D6A4 /* UIHelper.swift */; };
+		9C87E01821EED4930022D6A4 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E01721EED4930022D6A4 /* Video.swift */; };
+		9C87E01A21EED4F00022D6A4 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C87E01921EED4F00022D6A4 /* VideoService.swift */; };
+		BFCA85FBE569C63075A6131D /* Pods_StreamLabsProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 814E2B9211E9D94BDED686C0 /* Pods_StreamLabsProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		814E2B9211E9D94BDED686C0 /* Pods_StreamLabsProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreamLabsProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C639B55998E3036A9685CE9 /* Pods-StreamLabsProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamLabsProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StreamLabsProject/Pods-StreamLabsProject.debug.xcconfig"; sourceTree = "<group>"; };
 		9C87DFDE21EE6BF00022D6A4 /* StreamLabsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreamLabsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C87DFE121EE6BF00022D6A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C87DFE821EE6BF20022D6A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +55,9 @@
 		9C87E01121EE93CC0022D6A4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		9C87E01321EE94310022D6A4 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		9C87E01521EEB3010022D6A4 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		9C87E01721EED4930022D6A4 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		9C87E01921EED4F00022D6A4 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
+		FA76F69322D5686796ABD86B /* Pods-StreamLabsProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreamLabsProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-StreamLabsProject/Pods-StreamLabsProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +65,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFCA85FBE569C63075A6131D /* Pods_StreamLabsProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79499AEDB052B272FB9C34AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				814E2B9211E9D94BDED686C0 /* Pods_StreamLabsProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F61B7EE37E73BB8EF2D23E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C639B55998E3036A9685CE9 /* Pods-StreamLabsProject.debug.xcconfig */,
+				FA76F69322D5686796ABD86B /* Pods-StreamLabsProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9C87DFD521EE6BF00022D6A4 = {
 			isa = PBXGroup;
 			children = (
 				9C87DFE021EE6BF00022D6A4 /* StreamLabsProject */,
 				9C87DFDF21EE6BF00022D6A4 /* Products */,
+				7F61B7EE37E73BB8EF2D23E7 /* Pods */,
+				79499AEDB052B272FB9C34AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +150,7 @@
 		9C87DFF521EE6D940022D6A4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9C87E01721EED4930022D6A4 /* Video.swift */,
 				9C87E01121EE93CC0022D6A4 /* Profile.swift */,
 				9C87E00D21EE77B70022D6A4 /* NotificationApp.swift */,
 			);
@@ -134,6 +163,7 @@
 				9C87E00F21EE7AF40022D6A4 /* NotificationService.swift */,
 				9C87E01321EE94310022D6A4 /* ProfileService.swift */,
 				9C87E01521EEB3010022D6A4 /* UIHelper.swift */,
+				9C87E01921EED4F00022D6A4 /* VideoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -145,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C87DFF021EE6BF30022D6A4 /* Build configuration list for PBXNativeTarget "StreamLabsProject" */;
 			buildPhases = (
+				EE1C70D73DA82D555DC92644 /* [CP] Check Pods Manifest.lock */,
 				9C87DFDA21EE6BF00022D6A4 /* Sources */,
 				9C87DFDB21EE6BF00022D6A4 /* Frameworks */,
 				9C87DFDC21EE6BF00022D6A4 /* Resources */,
+				669D45708560A18810EECAD8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,11 +235,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		669D45708560A18810EECAD8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StreamLabsProject/Pods-StreamLabsProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MMPlayerView/MMPlayerView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMPlayerView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StreamLabsProject/Pods-StreamLabsProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE1C70D73DA82D555DC92644 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StreamLabsProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9C87DFDA21EE6BF00022D6A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C87E01A21EED4F00022D6A4 /* VideoService.swift in Sources */,
 				9C87E00421EE722D0022D6A4 /* ProfileView.swift in Sources */,
 				9C87E01421EE94310022D6A4 /* ProfileService.swift in Sources */,
 				9C87E01221EE93CC0022D6A4 /* Profile.swift in Sources */,
@@ -221,6 +293,7 @@
 				9C87E00E21EE77B70022D6A4 /* NotificationApp.swift in Sources */,
 				9C87DFFC21EE70110022D6A4 /* SearchViewController.swift in Sources */,
 				9C87E01621EEB3010022D6A4 /* UIHelper.swift in Sources */,
+				9C87E01821EED4930022D6A4 /* Video.swift in Sources */,
 				9C87DFFA21EE70040022D6A4 /* StreamViewController.swift in Sources */,
 				9C87E00821EE76E50022D6A4 /* StreamView.swift in Sources */,
 				9C87E00621EE76B90022D6A4 /* NotificationView.swift in Sources */,
@@ -360,6 +433,7 @@
 		};
 		9C87DFF121EE6BF30022D6A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C639B55998E3036A9685CE9 /* Pods-StreamLabsProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +452,7 @@
 		};
 		9C87DFF221EE6BF30022D6A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA76F69322D5686796ABD86B /* Pods-StreamLabsProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
