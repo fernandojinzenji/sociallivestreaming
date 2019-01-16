@@ -103,9 +103,7 @@ extension StreamView {
     
     public func stopCurrentVideo() {
         
-        if let currentCell = currentCell {
-            currentCell.stopVideo()
-        }
+        self.currentCell?.stopVideo()
     }
 }
 
@@ -157,6 +155,7 @@ class StreamCell: UITableViewCell {
     
     func stopVideo() {
 
+        self.player?.pause()
         self.player = nil
     }
     

@@ -10,19 +10,29 @@ import UIKit
 
 class StreamViewController: UIViewController {
 
-    var contentView = StreamView()
+    var contentView: StreamView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Setup UI
-        self.view = contentView
-        
-        // Load videos
-        contentView.loadStream(videos: VideoService.returnHardcodedVideoList())
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        contentView.stopCurrentVideo()
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if contentView == nil {
+            contentView = StreamView()
+            
+            // Setup UI
+            self.view = contentView
+            
+            // Load videos
+            contentView!.loadStream(videos: VideoService.returnHardcodedVideoList())
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.contentView?.stopCurrentVideo()
+        self.contentView = nil
+    }
 }
