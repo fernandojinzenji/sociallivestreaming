@@ -19,4 +19,7 @@ public class UIHelper {
         
     }
     
+    public class func getStreamLabsGreenColor() -> UIColor {
+        return UIColor(red: 98/255, green: 192/255, blue: 164/255, alpha: 1.0)
+    }
 }
