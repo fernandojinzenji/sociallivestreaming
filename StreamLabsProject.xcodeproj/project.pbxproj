@@ -179,7 +179,6 @@
 				9C87DFDA21EE6BF00022D6A4 /* Sources */,
 				9C87DFDB21EE6BF00022D6A4 /* Frameworks */,
 				9C87DFDC21EE6BF00022D6A4 /* Resources */,
-				669D45708560A18810EECAD8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,24 +235,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		669D45708560A18810EECAD8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-StreamLabsProject/Pods-StreamLabsProject-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MMPlayerView/MMPlayerView.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMPlayerView.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StreamLabsProject/Pods-StreamLabsProject-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EE1C70D73DA82D555DC92644 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
