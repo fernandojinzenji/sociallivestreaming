@@ -127,6 +127,11 @@ class StreamCell: UITableViewCell {
             self.layer.addSublayer(playerLayer)
             playerLayer.frame = UIApplication.shared.keyWindow!.frame
             player!.play()
+            
+            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.player!.currentItem, queue: .main) { [weak self] _ in
+                self?.player?.seek(to: CMTime.zero)
+                self?.player?.play()
+            }
         }
     }
     
