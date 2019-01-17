@@ -18,21 +18,24 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         // Setup UI
-        contentView.delegate = self
+        self.contentView.delegate = self
         self.view = contentView
+        
+        // Load videos
+        self.contentView.loadHashtagTopList(videos: VideoService.returnHardcodedVideoList())
     
     }
 }
 
 extension SearchViewController: SearchViewDelegate {
- 
-    func searchBy(keyword: String) {
+    
+    func displayVideo(videoURL: String) {
         
         // Harcoded url
-        let player = AVPlayer(url: URL(string: "https://stream.livestreamfails.com/video/5c103d427afc4.mp4")!)
+        let player = AVPlayer(url: URL(string: videoURL)!)
         let vc = AVPlayerViewController()
         vc.player = player
-        
+
         present(vc, animated: true) {
             vc.player?.play()
         }

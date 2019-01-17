@@ -12,7 +12,7 @@ import AVKit
 
 protocol SearchViewDelegate: class {
     
-    func searchBy(keyword: String)
+    func displayVideo(videoURL: String)
 }
 
 class SearchView: UIView {
@@ -22,6 +22,12 @@ class SearchView: UIView {
     
     // UI elements
     private var searchTextField = UITextField()
+    private var collectionView: UICollectionView!
+    
+    // Data
+    private var hashtagTopList = [Video]()
+//    private var hashtagMiddleList = [Video]()
+//    private var hashtagBottomList = [Video]()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,6 +60,29 @@ class SearchView: UIView {
         loupe.tintColor = UIColor.lightGray
         searchTextField.leftView = loupe
         searchTextField.leftViewMode = .always
+        
+        // Sample Collection View (could be nested in a table view to display multiple sections)
+        let titleLabel = UILabel()
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.text = "#fortnite"
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
+        self.addSubview(titleLabel)
+        titleLabel.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 32.0).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 4.0).isActive = true
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(HashtagCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.backgroundColor = UIHelper.getStreamLabsGreenColor()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        self.addSubview(collectionView)
+        collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4.0).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 4.0).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -4.0).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
     
     }
     
@@ -62,17 +91,92 @@ class SearchView: UIView {
     }
 
     @objc private func searchButtonTapped() {
-        self.delegate?.searchBy(keyword: searchTextField.text ?? "")
+        self.delegate?.displayVideo(videoURL: "https://stream.livestreamfails.com/video/5c103d427afc4.mp4")
     }
 }
 
-//// Public methods available to controller
-//extension SearchView {
-//    
-//    public func playVideo(avPlayerController: AVPlayerViewController) {
-//        
-//        avPlayerController.present(vc, animated: true) {
-//            vc.player?.play()
-//        }
-//    }    
-//}
+// Public methods available to controller
+extension SearchView {
+    
+    public func loadHashtagTopList(videos: [Video]) {
+        
+        hashtagTopList = videos
+        collectionView.reloadData()
+    }
+}
+
+// CollectionView protocols - UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
+extension SearchView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return hashtagTopList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HashtagCell
+        
+        let video = hashtagTopList[indexPath.item]
+        cell.setVideo(video: video)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 160, height: 90)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let video = hashtagTopList[indexPath.item]
+        self.delegate?.displayVideo(videoURL: video.streamURL)
+    }
+}
+
+
+
+
+
+
+
+
+class HashtagCell: UICollectionViewCell {
+    
+    // UI elements
+    private var coverImageView = UIImageView()
+    
+    // Data
+    private var video: Video!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.backgroundColor = .white
+        
+        coverImageView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(coverImageView)
+        coverImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        coverImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        coverImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        coverImageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func setVideo(video: Video) {
+        self.video = video
+        coverImageView.load(url: URL(string: video.coverImage)!)
+    }
+}
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}
